@@ -15,7 +15,7 @@ module.exports = {
             switch (error.details[0].context.key) {
                 case 'email':
                     res.status(400).send({
-                        error: 'You must provide a valide email adress'
+                        error: 'You must provide a valid email adress'
                     })
                     break
                 case 'password':
