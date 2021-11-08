@@ -1,23 +1,26 @@
 <template>
   <v-toolbar fixed dark>
-    <v-toolbar-title>
-      TabTracker
-    </v-toolbar-title>
+    <v-toolbar-items class="mr-4">
+      <v-btn to="/" elevation="0">
+          TabTracker
+      </v-btn>
+    </v-toolbar-items>
 
-    <v-toolbar-items>
+    <!--<v-toolbar-items>
       <v-btn elevation="0">
         Browse
       </v-btn>
-    </v-toolbar-items>
+    </v-toolbar-items>-->
 
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
-      <!--<router-link to="login" class="cyan">Log In</router-link>-->
-      <v-btn elevation="0">
-        <router-link to="register">
+      <v-btn to="login" elevation="0">
+          Login
+      </v-btn>
+
+      <v-btn to="register" elevation="0">
           Sign Up
-        </router-link>
       </v-btn>
 
     </v-toolbar-items>
