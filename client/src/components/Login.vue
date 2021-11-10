@@ -1,35 +1,32 @@
 <template>
   <v-container>
-      <v-card class="mx-auto my-12" max-width="374">
-        <v-toolbar flat dark dense>
-          <v-toolbar-title>Login</v-toolbar-title>
-        </v-toolbar>
-        <v-card class="pl-4 pr-4 pt-2 pb-2">
-          <v-text-field
-                 label="Email"
-                 v-model="email">
-          </v-text-field>
-          <br />
-          <v-text-field label="Password"
-                        type="password"
-                        v-model="password">
-          </v-text-field>
-          <br />
-          <v-flex v-html="error" class="error"/>
-          <br />
-          <v-btn
-                 depressed
-                 dark
-                 @click="login">
-            Login
-          </v-btn>
-        </v-card>
-      </v-card>
+    <v-card class="mx-auto my-12" max-width="374">
+      <panel title="Login">
+
+        <v-text-field label="Email"
+                      v-model="email">
+        </v-text-field>
+        <br />
+        <v-text-field label="Password"
+                      type="password"
+                      v-model="password">
+        </v-text-field>
+        <br />
+        <v-flex v-html="error" class="error" />
+        <br />
+        <v-btn depressed
+               dark
+               @click="login">
+          Login
+        </v-btn>
+      </panel>
+    </v-card>
   </v-container>
 </template>
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 
 export default {
   data () {
@@ -52,6 +49,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>

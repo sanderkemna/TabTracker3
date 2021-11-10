@@ -1,37 +1,34 @@
 <template>
   <v-container>
-      <v-card class="mx-auto my-12" max-width="374">
-        <v-toolbar flat dark dense>
-          <v-toolbar-title>Register</v-toolbar-title>
-        </v-toolbar>
-        <v-card class="pl-4 pr-4 pt-2 pb-2">
-          <form name="tab-tracker-form">
-            <v-text-field label="Email"
-                          v-model="email">
-            </v-text-field>
-            <br />
-            <v-text-field label="Password"
-                          type="password"
-                          autocomplete="new-password"
-                          v-model="password">
-            </v-text-field>
-          </form>
+    <v-card class="mx-auto my-12" max-width="374">
+      <panel title="Register">
+        <form name="tab-tracker-form">
+          <v-text-field label="Email"
+                        v-model="email">
+          </v-text-field>
           <br />
-          <v-flex v-html="error" class="error"/>
-          <br />
-          <v-btn
-                 depressed
-                 dark
-                 @click="register">
-            Register
-          </v-btn>
-        </v-card>
-      </v-card>
+          <v-text-field label="Password"
+                        type="password"
+                        autocomplete="new-password"
+                        v-model="password">
+          </v-text-field>
+        </form>
+        <br />
+        <v-flex v-html="error" class="error" />
+        <br />
+        <v-btn depressed
+               dark
+               @click="register">
+          Register
+        </v-btn>
+      </panel>
+    </v-card>
   </v-container>
 </template>
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 
 export default {
   data () {
@@ -54,6 +51,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>

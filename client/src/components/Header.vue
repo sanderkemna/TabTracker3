@@ -6,21 +6,25 @@
       </v-btn>
     </v-toolbar-items>
 
-    <!--<v-toolbar-items>
-      <v-btn elevation="0">
+    <v-toolbar-items>
+      <v-btn to="songs" v-if="$store.state.isUserLoggedIn" elevation="0">
         Browse
       </v-btn>
-    </v-toolbar-items>-->
+    </v-toolbar-items>
 
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
       <v-btn to="login" v-if="!$store.state.isUserLoggedIn" elevation="0">
-          Login
+        Login
       </v-btn>
 
       <v-btn to="register" v-if="!$store.state.isUserLoggedIn" elevation="0">
-          Sign Up
+        Sign Up
+      </v-btn>
+
+      <v-btn to="/" v-if="$store.state.isUserLoggedIn" elevation="0" @click="logout">
+        Log Out
       </v-btn>
 
     </v-toolbar-items>
@@ -29,7 +33,12 @@
 
 <script>
 export default {
-
+  methods: {
+    logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setUser', null)
+    }
+  }
 }
 </script>
 
