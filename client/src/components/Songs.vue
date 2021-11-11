@@ -2,14 +2,23 @@
   <v-container>
     <v-card class="mx-auto my-12">
       <panel title="Songs">
-
-        <div v-for="song in songs"
+        <v-btn fab
+               slot="action"
+               light
+               to="/songs/create"
+               medium
+               absolute
+               right
+               middle>
+          <v-icon>mdi-plus-circle-outline</v-icon>
+        </v-btn>
+        <div
+             v-for="song in songs"
              :key="song.id">
           {{song.title}}
           {{song.artist}}
           {{song.album}}
         </div>
-
       </panel>
     </v-card>
   </v-container>

@@ -7,6 +7,7 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import store from '@/store/store'
 import { sync } from 'vuex-router-sync'
+import '@mdi/font/css/materialdesignicons.css'
 
 Vue.config.productionTip = false
 

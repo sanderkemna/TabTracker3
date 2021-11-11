@@ -6,11 +6,11 @@
     "\\client\\src\\components",
     "\\client\\src\\router",
     "\\client\\src\\services",
+    "\\client\\src\\store",
+    "\\server",
     "\\server\\src",
-    "\\server\\src\\controllers",
-    "\\server\\src\\models",
-    "\\server\\src\\policies"
+    "\\server\\src\\config"
   ],
-  "SelectedNode": "\\client\\src\\components\\Header.vue",
+  "SelectedNode": "\\client\\src\\components\\Songs.vue",
   "PreviewInSolutionExplorer": false
 }
