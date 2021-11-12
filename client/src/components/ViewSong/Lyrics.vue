@@ -1,15 +1,13 @@
 <template>
-
-<panel title="Lyrics">
-  <v-layout>
-    <v-textarea
-                readonly
-                v-model="song.lyrics">
-    </v-textarea>
-
-  </v-layout>
-</panel>
-        
+  <panel title="Lyrics">
+    <v-layout>
+      <v-textarea
+                  auto-grow
+                  readonly
+                  v-model="song.lyrics">
+      </v-textarea>
+    </v-layout>
+  </panel>
 </template>
 
 <script>
@@ -35,5 +33,5 @@ export default {
     border-color: transparent;
     overflow: auto;
     padding: 40px;
-  } 
+  }
 </style>

@@ -1,5 +1,4 @@
 <template>
-
   <panel title="Youtube Video">
     <youtube
              :video-id="youtubeId"
@@ -7,7 +6,6 @@
              :player-height="200">
     </youtube>
   </panel>
-        
 </template>
 
 <script>

@@ -1,15 +1,13 @@
 <template>
-
-<panel title="Tab">
-  <v-layout>
-    <v-textarea
-                readonly
-                v-model="song.tab">
-    </v-textarea>
-
-  </v-layout>
-</panel>
-        
+  <panel title="Tab">
+    <v-layout>
+      <v-textarea
+                  auto-grow
+                  readonly
+                  v-model="song.tab">
+      </v-textarea>
+    </v-layout>
+  </panel>
 </template>
 
 <script>
@@ -28,12 +26,12 @@ export default {
 <style scoped>
   textarea {
     width: 100%;
-    font-family: monospace;
+    font-family: "Roboto Mono", "Courier New", monospace;
     border: none;
     height: 600px;
     border-style: none;
     border-color: transparent;
     overflow: auto;
     padding: 40px;
-  } 
+  }
 </style>
