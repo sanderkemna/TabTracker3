@@ -19,14 +19,14 @@
 
     <v-toolbar-items>
       <v-btn
-             to="login"
+             to="/login"
              v-if="!$store.state.isUserLoggedIn"
              elevation="0">
         Login
       </v-btn>
 
       <v-btn
-             to="register"
+             to="/register"
              v-if="!$store.state.isUserLoggedIn"
              elevation="0">
         Sign Up

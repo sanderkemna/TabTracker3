@@ -8,6 +8,9 @@ import 'vuetify/dist/vuetify.min.css'
 import store from '@/store/store'
 import { sync } from 'vuex-router-sync'
 import '@mdi/font/css/materialdesignicons.css'
+import VueYouTubeEmbed from 'vue-youtube-embed'
+
+Vue.use(VueYouTubeEmbed)
 
 Vue.config.productionTip = false
 
