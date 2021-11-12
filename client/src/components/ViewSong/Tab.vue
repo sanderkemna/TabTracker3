@@ -2,6 +2,7 @@
   <panel title="Tab">
     <v-layout>
       <v-textarea
+                  class="tab"
                   auto-grow
                   readonly
                   v-model="song.tab">
@@ -11,12 +12,8 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
 
 export default {
-  components: {
-    Panel
-  },
   props: [
     'song'
   ]
@@ -24,11 +21,10 @@ export default {
 </script>
 
 <style scoped>
-  textarea {
+  .tab {
     width: 100%;
-    font-family: "Roboto Mono", "Courier New", monospace;
+    font-family: monospace;
     border: none;
-    height: 600px;
     border-style: none;
     border-color: transparent;
     overflow: auto;

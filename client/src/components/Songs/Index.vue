@@ -2,20 +2,20 @@
   <v-container>
     <v-card class="mx-auto my-12">
       <songs-search-panel />
-      <songs-panel />
+      <songs-panel class="mt-4"/>
     </v-card>
   </v-container>
 </template>
 
 <script>
 import SongsService from '@/services/SongsService'
-import Panel from '@/components/Panel'
 import SongsPanel from './SongsPanel'
+import SongsSearchPanel from './SongsSearchPanel'
 
 export default {
   components: {
-    Panel,
-    SongsPanel
+    SongsPanel,
+    SongsSearchPanel
   },
   data () {
     return {
