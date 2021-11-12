@@ -26,13 +26,11 @@
             {{song.genre}}
           </div>
           <v-btn dark
-                  @click="navigateTo({
-                    name: 'song',
-                    params: {
-                      songId: song.id
-                    }
-                  })">
-                View
+              :to="{
+                name: 'song',
+                params: { songId: song.id }
+              }">
+              View
           </v-btn>
         </v-flex>
         <v-flex xs6>
@@ -52,9 +50,12 @@ export default {
       songs: null
     }
   },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
+  watch: {
+    '$route.query.search': {
+      immediate: true,
+      async handler (value) {
+        this.songs = (await SongsService.index(value)).data
+      }
     }
   },
   async mounted () {

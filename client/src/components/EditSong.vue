@@ -39,6 +39,7 @@
         <v-flex xs8>
           <panel title="Song structure" class="ml-4">
             <v-textarea label="Tab"
+                        class="tab"
                         :rules="[rules.required]"
                         v-model="song.tab">
             </v-textarea>
@@ -115,5 +116,13 @@ export default {
 </script>
 
 <style scoped>
-
+  .tab {
+    width: 100%;
+    font-family: monospace;
+    border: none;
+    border-style: none;
+    border-color: transparent;
+    overflow: auto;
+    padding: 40px;
+  }
 </style>

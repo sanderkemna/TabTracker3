@@ -10,11 +10,11 @@
       <!--<v-btn to="/songs"
              v-if="$store.state.isUserLoggedIn"
              elevation="0">-->
-        <v-btn to="/songs"
-               elevation="0">
-          Browse
-        </v-btn>
-</v-toolbar-items>
+      <v-btn to="/songs"
+              elevation="0">
+        Browse
+      </v-btn>
+    </v-toolbar-items>
 
     <v-spacer></v-spacer>
 

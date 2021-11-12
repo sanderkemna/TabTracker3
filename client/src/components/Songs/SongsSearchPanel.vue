@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 
 export default {
   data () {
@@ -16,7 +17,7 @@ export default {
     }
   },
   watch: {
-    search (value) {
+    search: _.debounce(async function (value) {
       const route = {
         name: 'songs'
       }
@@ -25,8 +26,14 @@ export default {
           search: this.search
         }
       }
-      this.$router.push(route)
-    },
+      this.$router.push(route).catch(err => {
+        if (err.name !== 'NavigationDuplicated' &&
+          !err.message.includes('Avoided redundant navigation to current location')
+        ) {
+          console.log(err)
+        }
+      })
+    }, 700),
     '$route.query.search': {
       immediate: true,
       handler (value) {
