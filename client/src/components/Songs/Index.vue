@@ -1,10 +1,10 @@
 <template>
-  <v-container>
-    <v-card class="mx-auto my-12">
+  <v-layout>
+    <v-flex class="mx-4 my-6">
       <songs-search-panel />
       <songs-panel class="mt-4"/>
-    </v-card>
-  </v-container>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
