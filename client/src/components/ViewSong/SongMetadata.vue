@@ -13,7 +13,7 @@
           {{song.genre}}
         </div>
         <v-btn dark
-          :to="{
+               :to="{
             name: 'song-edit',
             params () {
                return {
@@ -23,6 +23,19 @@
           }">
           Edit
         </v-btn>
+
+        <v-btn dark
+               v-if="isUserLoggedIn && !isBookmarked"
+               @click="bookmark">
+          Bookmark
+        </v-btn>
+
+        <v-btn dark
+               v-if="isUserLoggedIn && isBookmarked"
+               @click="unbookmark">
+          Unbookmark
+        </v-btn>
+
       </v-flex>
 
       <v-flex xs4>
@@ -36,11 +49,39 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import BookmarksService from '@/services/BookmarksService'
 
 export default {
   props: [
     'song'
-  ]
+  ],
+  data () {
+    return {
+      isBookmarked: false
+    }
+  },
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
+  },
+  async mounted () {
+    const bookmark = (await BookmarksService.index({
+      songId: 1,
+      userId: 10
+    })).data
+    this.isBookmarked = !! bookmark
+    console.log('bookmark', this.isBookmarked)
+  },
+  methods: {
+    bookmark () {
+      console.log('bookmark')
+    },
+    unbookmark () {
+      console.log('unbookmark')
+    }
+  }
 }
 </script>
 
